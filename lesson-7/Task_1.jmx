@@ -11,7 +11,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Grupa wątków" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -19,8 +19,8 @@
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <longProp name="ThreadGroup.start_time">1449755308000</longProp>
-        <longProp name="ThreadGroup.end_time">1449755308000</longProp>
+        <longProp name="ThreadGroup.start_time">1453402760000</longProp>
+        <longProp name="ThreadGroup.end_time">1453402760000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
@@ -31,7 +31,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="Sleep_Time" elementType="Argument">
                 <stringProp name="Argument.name">Sleep_Time</stringProp>
-                <stringProp name="Argument.value">100</stringProp>
+                <stringProp name="Argument.value">1000</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="Sleep_Mask" elementType="Argument">
@@ -41,7 +41,7 @@
               </elementProp>
               <elementProp name="Label" elementType="Argument">
                 <stringProp name="Argument.name">Label</stringProp>
-                <stringProp name="Argument.value">Test numer ${Licznik} Test User ${__threadNum}</stringProp>
+                <stringProp name="Argument.value">Watek ${__threadNum} licznik ${zliczanie}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="ResponseCode" elementType="Argument">
@@ -73,20 +73,6 @@
           </elementProp>
           <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
         </JavaSampler>
-        <hashTree>
-          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Zmienne zdefiniowane przez użytkownika" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </Arguments>
-          <hashTree/>
-        </hashTree>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Licznik" enabled="true">
-          <stringProp name="CounterConfig.start">1</stringProp>
-          <stringProp name="CounterConfig.end"></stringProp>
-          <stringProp name="CounterConfig.incr">1</stringProp>
-          <stringProp name="CounterConfig.name">Licznik</stringProp>
-          <stringProp name="CounterConfig.format"></stringProp>
-          <boolProp name="CounterConfig.per_user">false</boolProp>
-        </CounterConfig>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -120,6 +106,15 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
+        <hashTree/>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end">20</stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">zliczanie</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
         <hashTree/>
       </hashTree>
     </hashTree>
